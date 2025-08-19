@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Table Tennis Game</title>
+    <link rel="stylesheet" href="../CSS/tt.css">
+</head>
+<body>
+    <div class="game-container">
+        <!-- Header Section -->
+        <header class="game-header">
+            <h1>🏓 Table Tennis Championship 🏓</h1>
+            <div class="game-stats">
+                <div class="stat-item">
+                    <span class="stat-label">Round:</span>
+                    <span id="current-round">1</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Match:</span>
+                    <span id="match-format">Best of 5</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Scoreboard -->
+        <div class="scoreboard">
+            <div class="player-section player1">
+                <div class="player-info">
+                    <h2 id="player1-name">Player 1</h2>
+                    <div class="wins-display">
+                        <span class="wins-label">Sets Won:</span>
+                        <span id="player1-sets">0</span>
+                    </div>
+                </div>
+                <div class="score-display">
+                    <span id="player1-score">0</span>
+                </div>
+                <div class="serve-indicator" id="player1-serve">SERVE</div>
+            </div>
+
+            <div class="vs-section">
+                <div class="vs-text">VS</div>
+                <div class="round-info">
+                    <div class="round-display">
+                        <span>Set</span>
+                        <span id="current-set">1</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="player-section player2">
+                <div class="player-info">
+                    <h2 id="player2-name">Player 2</h2>
+                    <div class="wins-display">
+                        <span class="wins-label">Sets Won:</span>
+                        <span id="player2-sets">0</span>
+                    </div>
+                </div>
+                <div class="score-display">
+                    <span id="player2-score">0</span>
+                </div>
+                <div class="serve-indicator" id="player2-serve">SERVE</div>
+            </div>
+        </div>
+
+        <!-- Game Canvas -->
+        <div class="canvas-container">
+            <canvas id="gameCanvas" width="800" height="400"></canvas>
+            <div class="game-overlay" id="game-overlay">
+                <div class="overlay-content">
+                    <h2 id="overlay-title">Game Ready!</h2>
+                    <p id="overlay-message">Press SPACE to start</p>
+                    <button id="start-btn" class="game-btn">Start Game</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Controls Section -->
+        <div class="controls-section">
+            <div class="control-group">
+                <h3>Player 1 Controls</h3>
+                <div class="control-keys">
+                    <span class="key">W</span> <span class="label">Up</span>
+                    <span class="key">S</span> <span class="label">Down</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <h3>Game Controls</h3>
+                <div class="control-keys">
+                    <span class="key">SPACE</span> <span class="label">Pause/Resume</span>
+                    <span class="key">R</span> <span class="label">Reset</span>
+                </div>
+            </div>
+            <div class="control-group">
+                <h3>Player 2 Controls</h3>
+                <div class="control-keys">
+                    <span class="key">↑</span> <span class="label">Up</span>
+                    <span class="key">↓</span> <span class="label">Down</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Game Settings -->
+        <div class="settings-panel">
+            <h3>Game Settings</h3>
+            <div class="setting-row">
+                <label for="player1-input">Player 1 Name:</label>
+                <input type="text" id="player1-input" value="Player 1" maxlength="12">
+            </div>
+            <div class="setting-row">
+                <label for="player2-input">Player 2 Name:</label>
+                <input type="text" id="player2-input" value="Player 2" maxlength="12">
+            </div>
+            <div class="setting-row">
+                <label for="match-type">Match Format:</label>
+                <select id="match-type">
+                    <option value="3">Best of 3</option>
+                    <option value="5" selected>Best of 5</option>
+                    <option value="7">Best of 7</option>
+                </select>
+            </div>
+            <div class="setting-row">
+                <label for="difficulty">AI Difficulty:</label>
+                <select id="difficulty">
+                    <option value="easy">Easy</option>
+                    <option value="medium" selected>Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+            </div>
+            <button id="apply-settings" class="game-btn">Apply Settings</button>
+            <button id="new-game" class="game-btn secondary">New Game</button>
+        </div>
+
+        <!-- Match History -->
+        <div class="match-history">
+            <h3>Match History</h3>
+            <div id="sets-history"></div>
+        </div>
+    </div>
+
+    <script src="../Java Script/tt.js"></script>
+</body>
+</html>
